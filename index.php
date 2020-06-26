@@ -22,7 +22,12 @@
     </style>
 </head>
 <body>
-    <p><?= 'login : ' . $_COOKIE['login'] . ' et mot de passe : ' . $_COOKIE['password'] ?></p>
+    <?php  if(isset($_COOKIE['login']) && isset($_COOKIE['password'])) {  ?>
+    <p><?= 'login : ' . $_COOKIE['login'] . ' et mot de passe : ' . $_COOKIE['password']  //on affiche le login contenue dans le cookie "login"?></p>
+    <?php }else { ?>
+    <p><?= 'Aucun cookie n\'est definie' ?></p>
+    <?php } ?>
     <p><a href="../index.php">Retour au menu</a></p>
+
 </body>
 </html>
